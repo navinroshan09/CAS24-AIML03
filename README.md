@@ -1,6 +1,14 @@
 # CAS24-AIML03
 
 ABSTRACT:
-This project, AI-Powered Social Media Sentiment Analysis for Brands, aims to classify tweets into positive, negative, or neutral sentiments using Python. A free Twitter API is used to detect the tweets from insta feed and taking them from the insta. The collected tweets undergo preprocessing, including text cleaning, tokenization, and stopword removal, to prepare them for sentiment classification.
+This project performs Twitter Sentiment Analysis using an existing CSV file of tweets, classifying them into positive, negative, or neutral sentiments. It is built with Flask for the backend and a user-friendly HTML, CSS, and JavaScript interface. The uploaded CSV file is processed, and sentiment classification is performed using pre-trained models. The results are displayed with sentiment distribution percentages and graphical visualizations using Matplotlib/Plotly.
 
-The sentiment analysis is performed using The results we get from the model are then visualized using Matplotlib and Plotly, providing clear graphical representations of sentiment trends.
+This tool enables businesses and researchers to analyze public sentiment trends effectively. The system provides a simple and interactive way to upload datasets and visualize sentiment analysis results, making it a useful solution for social media analytics and brand monitoring.
+
+
+
+
+
+
+
+
