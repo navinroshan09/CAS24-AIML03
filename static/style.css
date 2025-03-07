@@ -1,0 +1,129 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    align:center;
+}
+
+html, body {
+    height: 100%;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 30px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 28px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* File Upload Section */
+.file-upload-section {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.file-input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 60%;
+    max-width: 300px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.file-input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.analyze-btn {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.analyze-btn:hover {
+    background-color: #45a049;
+}
+
+/* Result Section */
+.result-section {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+.info-text {
+    font-size: 16px;
+    color: #777;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+/* Sentiment Image Styling */
+.sentiment-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .file-upload-section {
+        flex-direction: column;
+    }
+
+    .file-input {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 10px;
+    }
+
+    .analyze-btn {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}

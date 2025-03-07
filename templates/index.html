@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Twitter Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="main-container">
+        <section class="header">
+            <img src="download.png" alt="App Logo" class="logo">
+            <h1>Twitter Sentiment Analysis</h1>
+        </section>
+
+        <section class="file-upload-section">
+            <input type="file" id="fileInput" accept=".csv, .txt" aria-label="Upload CSV or TXT file" class="file-input">
+            <button onclick="uploadFile()" class="analyze-btn" aria-label="Analyze Sentiment">Analyze</button>
+        </section>
+
+        <section id="result" class="result-section">
+            <p class="info-text">Please upload a file to analyze the sentiment.</p>
+        </section>
+
+        <section>
+            <img id="sentimentImage" src="" alt="Sentiment Graph" class="sentiment-image" aria-hidden="true">
+        </section>
+    </main>
+
+    <script>
+        function uploadFile() {
+            let fileInput = document.getElementById("fileInput").files[0];
+            if (!fileInput) {
+                alert("Please upload a file!");
+                return;
+            }
+
+            let formData = new FormData();
+            formData.append("file", fileInput);
+
+            fetch("/analyze", { method: "POST", body: formData })
+                .then(response => response.json())
+                .then(data => {
+                    const resultElement = document.getElementById("result");
+                    if (data.error) {
+                        resultElement.innerHTML = `<p class="error-message">${data.error}</p>`;
+                        return;
+                    }
+
+                    resultElement.innerHTML = `
+                        <p><strong>Positive:</strong> ${data.positive}</p>
+                        <p><strong>Negative:</strong> ${data.negative}</p>
+                        <p><strong>Neutral:</strong> ${data.neutral}</p>
+                    `;
+                    const sentimentImage = document.getElementById("sentimentImage");
+                    sentimentImage.src = data.image_url;
+                    sentimentImage.style.display = "block";
+                })
+                .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>
