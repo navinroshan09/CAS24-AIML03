@@ -92,28 +92,28 @@ twitter-sentiment-analysis/
 ✅ Graphical visualization of results
 ✅ Clean and interactive web interface
 
-#🖥️ How to Run the Project
-###1️⃣ Clone the repository
+# 🖥️ How to Run the Project
+### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/your-username/twitter-sentiment-analysis.git
 ```
 
-###2️⃣ Navigate to the project folder
+### 2️⃣ Navigate to the project folder
 ```bash
 cd twitter-sentiment-analysis
 ```
 
-###3️⃣ Install required dependencies
+### 3️⃣ Install required dependencies
 ```bash
 pip install flask pandas numpy matplotlib plotly vaderSentiment
 ```
 
-###4️⃣ Run the Flask application
+### 4️⃣ Run the Flask application
 ```bash
 python app.py
 ```
 
-###5️⃣ Open in browser
+### 5️⃣ Open in browser
 ```bash
 http://127.0.0.1:5000/
 ```
